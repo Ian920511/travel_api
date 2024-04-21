@@ -1,7 +1,7 @@
-const db = require('../models')
-const { Viewpoint } = db
+const { Viewpoint } = require('../models')
 
 const viewpointController = {
+  
 
 }
 
