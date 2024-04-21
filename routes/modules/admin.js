@@ -10,5 +10,6 @@ router.put('/category/:id', categoryController.putCategory)
 router.delete('/category/:id', categoryController.deleteCategory)
 router.post('/viewpoint', viewpointController.postViewpoints)
 router.put('/viewpoint/:id', viewpointController.putViewpoint)
+router.delete('/viewpoint/:id', viewpointController.deleteViewpoint)
 
 module.exports = router

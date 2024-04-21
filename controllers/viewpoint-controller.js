@@ -92,6 +92,22 @@ const viewpointController = {
     }
   },
 
+  deleteViewpoint: async (req, res, next) => {
+    try {
+      const viewpoint = await Viewpoint.findByPk(req.params.id)
+      if (!viewpoint) throw new createError(404, "Viewpoint doesn't exist")
+
+      await Viewpoint.destroy({ where: { id: req.params.id }})
+
+      res.json({
+        status: 'success',
+        data: { viewpoint }
+      })
+    } catch (error) {
+      next (error)
+    }
+  }
+
 }
 
 module.exports = viewpointController
