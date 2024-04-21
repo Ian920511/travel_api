@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   Viewpoint.associate = function(models) {
     // associations can be defined here
+    Viewpoint.belongsTo(models.Category, { foreignKey: 'categoryId' })
   };
   return Viewpoint;
 };
