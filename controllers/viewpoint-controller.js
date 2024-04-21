@@ -69,6 +69,29 @@ const viewpointController = {
     }
   },
 
+  putViewpoint: async (req, res, next) => {
+    try {
+      const { name, address, image, categoryId } = req.body
+
+      if (!name) throw new createError(400, 'Viewpoint name is required')
+
+      const oldViewpoint = await Viewpoint.findByPk(req.params.id)
+      if (!oldViewpoint) throw new createError(404, "Viewpoint doesn't exist")
+
+      await Viewpoint.update({ name, address, image, categoryId }, { where: { id: req.params.id }})
+      
+      const newViewpoint = await Viewpoint.findByPk(req.params.id)
+
+      res.json({
+        status: 'success',
+        data: { newViewpoint }
+      })
+
+    } catch (error) {
+      next (error)
+    }
+  },
+
 }
 
 module.exports = viewpointController
