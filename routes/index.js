@@ -8,6 +8,6 @@ const admin = require('./modules/admin')
 
 router.use('/users', users)
 router.use('/categories', categories)
-router.use('/admin', authenticated, categories)
+router.use('/admin', authenticated, admin)
 
 module.exports = router

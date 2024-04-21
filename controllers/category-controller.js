@@ -18,7 +18,7 @@ const categoryController = {
   postCategories: async (req, res, next) => {
     try {
       const { name } = req.body
-      if (!name) throw new createError('Category name is required!')
+      if (!name) throw new createError(400 ,'Category name is required')
 
       const category = await Category.create({ name })
 
@@ -30,7 +30,29 @@ const categoryController = {
     } catch (error) {
       next (error)
     }
-  }
+  },
+
+  putCategory: async (req, res, next) => {
+    try {
+      const { name } = req.body
+      if (!name) throw new createError(400, 'Category name is required')
+
+      const oldCategory = await Category.findByPk(req.params.id)
+      if (!oldCategory) throw new createError(404, "Category doesn't exist")
+      
+      await Category.update({ name }, { where: { id: req.params.id }})
+      
+      const newCategory = await Category.findByPk(req.params.id)
+
+      res.json({
+        status: 'success',
+        data: { newCategory }
+      })
+
+    } catch (error) {
+      next (error)
+    }
+  },
 }
 
 module.exports = categoryController
