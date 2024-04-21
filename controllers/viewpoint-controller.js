@@ -26,7 +26,9 @@ const viewpointController = {
 
       if (!name) throw new createError(400, 'Viewpoint name is required')
 
-      const category = await Category.findByPk(categoryId, { raw: true })
+      const category = await Category.findByPk(categoryId)
+
+      if (!category) throw new createError(404, 'Category not found')
 
       const viewpoint = await Viewpoint.create({
         name,
@@ -46,7 +48,26 @@ const viewpointController = {
     } catch (error) {
       next (error)
     }
-  }
+  },
+
+  getViewpoint: async (req, res, next) => {
+    try {
+      const viewpoint = await Viewpoint.findByPk(req.params.id)
+
+      if (!viewpoint) throw new createError(404, "Viewpoint didn't exist")
+
+      res.json({
+        status: 'success',
+        data: {
+          viewpoint
+        }
+      })
+
+
+    } catch (error) {
+      next (error)
+    }
+  },
 
 }
 

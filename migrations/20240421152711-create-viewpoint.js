@@ -18,7 +18,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       category_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
       created_at: {
         allowNull: false,
