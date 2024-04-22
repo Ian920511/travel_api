@@ -46,6 +46,26 @@ const commentController = {
     } catch (error) {
       next (error)
     }
+  },
+
+  deleteComment: async (req, res, next) => {
+    try {
+      const id = req.params.id
+
+      const comment = await Comment.findByPk(id)
+      if (!comment) throw new createError(404, "Comment didn't exist")
+
+      await Comment.destroy({ where: { id }})
+
+      res.json({
+        status: 'success',
+        data: { comment }
+      })
+
+
+    } catch (error) {
+      next (error)
+    }
   }
 
 }
