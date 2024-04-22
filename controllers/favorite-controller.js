@@ -22,6 +22,23 @@ const favoriteController = {
     } catch (error) {
       next (error)
     }
+  },
+
+  removeFavorite: async (req, res, next) => {
+    try {
+      const favorite = await Favorite.findOne({ where: { userId: req.user.id, viewpointId: req.params.id }})
+      if (!favorite) throw new createError(409, 'You have not favorited this viewpoint')
+
+      await Favorite.destroy({ where: { userId: req.user.id, viewpointId: req.params.id }})
+
+      res.json({
+        status: 'success',
+        data: { favorite }
+      })
+
+    } catch (error) {
+      next (error)
+    }
   }
 }
 
