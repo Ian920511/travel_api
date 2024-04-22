@@ -12,6 +12,6 @@ router.use('/users', users)
 router.use('/categories', categories)
 router.use('/viewpoints', viewpoints)
 router.use('/admin', authenticated, admin)
-router.use('/comments', authenticated, comments)
+router.use('/comments', comments)
 
 module.exports = router

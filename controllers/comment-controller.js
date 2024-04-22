@@ -31,7 +31,22 @@ const commentController = {
     }
   },
 
+  getComments: async (req, res, next) => {
+    try {
+      const viewpointId = req.params.id
 
+      const comments = await Comment.findAll({ where : { viewpointId }})
+      
+      res.json({
+        status: 'success',
+        data: { comments }
+      })
+
+
+    } catch (error) {
+      next (error)
+    }
+  }
 
 }
 
