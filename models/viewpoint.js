@@ -12,6 +12,12 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     Viewpoint.belongsTo(models.Category, { foreignKey: 'categoryId' })
     Viewpoint.hasMany(models.Comment, { foreignKey: 'viewpointId' })
+
+    Viewpoint.belongsToMany(models.User, {
+        through: models.Favorite, 
+        foreignKey: 'viewpointId',
+        as: 'FavoritedUsers' 
+      })
   };
   return Viewpoint;
 };
