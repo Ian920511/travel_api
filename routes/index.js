@@ -12,7 +12,7 @@ const favorites = require('./modules/favorites')
 router.use('/users', users)
 router.use('/categories', categories)
 router.use('/viewpoints', viewpoints)
-router.use('/admin', authenticated, admin)
+router.use('/admin', authenticated, authenticatedAdmin, admin)
 router.use('/comments', authenticated, comments)
 router.use('/favorites', authenticated, favorites)
 
