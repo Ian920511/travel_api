@@ -80,7 +80,7 @@ Failure Response | code : 400
 }
 ```
 
-## POST /api/users/signup (User signup)
+## POST /apis/users/signup (User signup)
 
 User sign up.
 
@@ -152,7 +152,7 @@ Failure Response | code : 500
 
 # Viewpoint
 
-## GET /api/viewpoints (Get all viewpoints)
+## GET /apis/viewpoints (Get all viewpoints)
 
 Get all viewpoints
 
@@ -188,7 +188,7 @@ Success | code : 200
 }
 ```
 
-## GET /api/viewpoints/:viewpointId (Get specific viewpoint info)
+## GET /apis/viewpoints/:viewpointId (Get specific viewpoint info)
 
 Get specific viewpoint info
 
@@ -228,7 +228,7 @@ Failure Response | code : 404
 }
 ```
 
-## POST /api/admin/viewpoints (Add new viewpoint)
+## POST /apis/admin/viewpoints (Add new viewpoint)
 
 Add new viewpoint
 
@@ -282,7 +282,7 @@ Failure Response | code : 404
 }
 ```
 
-## PUT /api/admin/viewpoints/:viewpointId (Update viewpoint)
+## PUT /apis/admin/viewpoints/:viewpointId (Update viewpoint)
 
 Update viewpoint
 
@@ -336,7 +336,7 @@ Failure Response | code : 404
 }
 ```
 
-## DELETE /api/admin/viewpoints/:viewpointId (Delete viewpoint)
+## DELETE /apis/admin/viewpoints/:viewpointId (Delete viewpoint)
 
 Delete viewpoint
 
@@ -380,7 +380,7 @@ Failure Response | code : 404
 
 # Category
 
-## GET /api/categories (Get all categories)
+## GET /apis/categories (Get all categories)
 
 Get all categories
 
@@ -410,7 +410,7 @@ Success | code : 200
 }
 ```
 
-## POST /api/admin/categories (Add new category)
+## POST /apis/admin/categories (Add new category)
 
 Add new category
 
@@ -449,7 +449,7 @@ Failure Response | code : 400
 }
 ```
 
-## PUT /api/admin/categories/:categoryId (Update category)
+## PUT /apis/admin/categories/:categoryId (Update category)
 
 Update category
 
@@ -497,7 +497,7 @@ Failure Response | code : 404
 }
 ```
 
-## DELETE /api/admin/categories/:categoryId (Delete category)
+## DELETE /apis/admin/categories/:categoryId (Delete category)
 
 Delete category
 
@@ -538,7 +538,7 @@ Failure Response | code : 404
 
 # Comment
 
-## GET /api/comments/:viewpointId (Get all specific viewpoint's comments)
+## GET /apis/comments/:viewpointId (Get all specific viewpoint's comments)
 
 Get all specific viewpoint's comments
 
@@ -566,7 +566,7 @@ Success | code : 200
 }
 ```
 
-## POST /api/comments/ (Add new comment on viewpoint)
+## POST /apis/comments/ (Add new comment on viewpoint)
 
 Add new comment on viewpoint
 
@@ -626,7 +626,7 @@ Failure Response | code : 404
 }
 ```
 
-## DELETE /api/admin/comments/:commentId (Delete comment)
+## DELETE /apis/admin/comments/:commentId (Delete comment)
 
 Delete comment
 
@@ -669,7 +669,7 @@ Failure Response | code : 404
 
 # Favorite
 
-## POST /api/favorites/:viewpointId (Add favorite on viewpoint)
+## POST /apis/favorites/:viewpointId (Add favorite on viewpoint)
 
 Add favorite on viewpoint
 
@@ -717,7 +717,7 @@ Failure Response | code : 409
 }
 ```
 
-## DELETE /api/favorites/:viewpointId (Delete favorite on viewpoint)
+## DELETE /apis/favorites/:viewpointId (Delete favorite on viewpoint)
 
 Delete favorite on viewpoint
 
